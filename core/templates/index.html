@@ -10,7 +10,7 @@
         <title>TEDxKSAUHS لو أن</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="{% static 'http://fonts.googleapis.com/css?family=Roboto:400,100,300,500' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
 		    <link rel="stylesheet" href="{% static 'css/form-elements.css' %}">
@@ -18,8 +18,8 @@
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-            <script src="{% static 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' %}"></script>
-            <script src="{% static 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js' %}"></script>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="{% static 'ico/favicon.png' %}">
@@ -231,8 +231,14 @@
         <script src="{% static 'js/jquery.backstretch.min.js' %}"></script>
         <script src="{% static 'js/retina-1.1.0.min.js' %}"></script>
         <script src="{% static 'js/scripts.js' %}"></script>
-        <script src="{% static 'js/placeholder.js' %}></script>
+        <script src="{% static 'js/placeholder.js' %}"></script>
+<script>
+    /*
+        Fullscreen background
+    */
 
+    $.backstretch("{% static 'img/backgrounds/1.jpg' %}");
+</script>
     </body>
 
 </html>

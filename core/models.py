@@ -21,7 +21,7 @@ class Regestiration(models.Model):
     job_title = models.CharField(max_length=100)
     yourself = models.TextField()
     about_tedx = models.TextField()
-    attend_Tedx = models.BooleanField(default=True)
+    attend_tedx = models.BooleanField(default=True)
     past_experience = models.TextField()
     referral = models.CharField(max_length=20)
     expectations = models.TextField()

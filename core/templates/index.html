@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TEDxKSAUHS لو أن</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'http://fonts.googleapis.com/css?family=Roboto:400,100,300,500' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+		    <link rel="stylesheet" href="{% static 'css/form-elements.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <script src="{% static 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' %}"></script>
+            <script src="{% static 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js' %}"></script>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="{% static 'ico/favicon.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'ico/apple-touch-icon-144-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'ico/apple-touch-icon-114-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'ico/apple-touch-icon-72-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" href="{% static 'ico/apple-touch-icon-57-precomposed.png' %}">
+
+    </head>
+
+    <body>
+
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">BootZard - Bootstrap Wizard Template</a>
+				</div>
+				<!-- Collect the navstatic filesstatic files links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<span class="li-text">
+								Put some text or
+							</span>
+							<a href="#"><strong>links</strong></a>
+							<span class="li-text">
+								here, or some icons:
+							</span>
+							<span class="li-social">
+								<a href="https://www.facebook.com/pages/Azmindcom/196582707093191" target="_blank"><i class="fa fa-facebook"></i></a>
+								<a href="https://twitter.com/anli_zaimi" target="_blank"><i class="fa fa-twitter"></i></a>
+								<a href="https://plus.google.com/+AnliZaimi_azmind" target="_blank"><i class="fa fa-google-plus"></i></a>
+								<a href="https://github.com/AZMIND" target="_blank"><i class="fa fa-github"></i></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+        <!-- Top content -->
+        <div class="top-content">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1>Free <strong>Bootstrap</strong> Wizard</h1>
+                        <div class="description">
+                       	    <p>
+                                This is a free responsive Bootstrap form wizard.
+                                Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+                    	<form role="form" method="post" class="f1">
+                        {% csrf_token %}
+                    		<h3>Register To Our App</h3>
+                    		<p>Fill in the form to get instant access</p>
+                    		<div class="f1-steps">
+                    			<div class="f1-progress">
+                    			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+                    			</div>
+                    			<div class="f1-step active">
+                    				<div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                    				<p>معلومات شخصية</p>
+                    			</div>
+                    			<div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-key"></i></div>
+                    				<p>عن TEDx</p>
+                    			</div>
+                    		    <div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-twitter"></i></div>
+                    				<p>عن الحدث</p>
+                    			</div>
+                    		</div>
+
+                    		<fieldset>
+                    		    <h4>أخبرنا عن نفسك:</h4>
+                    			<div class="form-group">
+                    			    <label class="sr-only" for="id_name">أسمك</label>
+                                    <input type="text" name="name" placeholder="أسمك" class="f1-first-name form-control" id="id_name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_gender">الجندر</label>
+                                    <input type="text" name="gender" placeholder="الجندر..." class="f1-last-name form-control" id="id_gender" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_age">العمر</label>
+                                    <input type="text" name="age" placeholder="العمر..." class="f1-last-name form-control" id="id_age" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_mobile">رقم الجوال</label>
+                                    <input type="text" name="mobile" placeholder="رقم الجوال.." class="f1-last-name form-control" id="id_mobile" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_email">البريد الإلكتروني</label>
+                                    <input type="text" name="email" placeholder="البريد الإلكتروني.." class="f1-last-name form-control" id="id_email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_city">المدينة</label>
+                                    <input type="text" name="city" placeholder="المدينة.." class="f1-last-name form-control" id="id_city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_fromNGH">من منسوبي الحرس الوطني؟</label>
+                                    <input type="text" name="fromNGH" placeholder="البريد الإلكتروني.." class="f1-last-name form-control" id="id_fromNGH" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_job_title">المسمى الوظيفي</label>
+                                    <input type="text" name="job_title" placeholder="البريد الإلكتروني.." class="f1-last-name form-control" id="id_job_title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_yourself">تحدث عن نفسك</label>
+                                    <textarea name="yourself" placeholder="تحدث عن نفسك..."
+                                    	                 class="f1-about-yourself form-control" id="id_yourself" required></textarea>
+                                </div>
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-next">Next</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <h4>عن TEDx:</h4>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_about_tedx">تحدث عن TEDx</label>
+                                    <textarea name="about_tedx" placeholder="تحدث عن TEDx.."
+                                                       class="f1-about-yourself form-control" id="id_about_tedx" required></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_attend_tedx">هل حضرت لتدكس؟</label>
+                                    <input type="text" name="attend_tedx" placeholder="هل حضرت لتدكس..." class="f1-email form-control" id="id_attend_tedx" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_past_experience">تحدث عن تجربتك السابقة</label>
+                                    <textarea name="about_tedx" placeholder="تحدث عن تجربتك السابقة.."
+                                                       class="f1-about-yourself form-control" id="id_about_tedx" ></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_referral">كيف سمعت  عن tedxksauhs ؟</label>
+                                    <input type="text" name="referral" placeholder="كيف سمعت  عن tedxksauhs ؟..." class="f1-email form-control" id="id_referral" required>
+                                </div>
+
+                                <div class="form-group">
+                                      <label class="sr-only" for="id_expectations">ماذا تتوقع من tedxksauhs ؟</label>
+                                      <input type="text" name="expectations" placeholder="ماذا تتوقع من tedxksauhs ؟..." class="f1-email form-control" id="id_expectations" required>
+                                </div>
+
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next">Next</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <h4>عن الحدث:</h4>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_meaning">ماذا تعني لك "لو أن"؟</label>
+                                    <textarea name="meaning" placeholder="ماذا تعني لك لو أن؟.."
+                                                       class="f1-about-yourself form-control" id="id_meaning" required ></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_interview">هل تسمح بعمل مقابلات معك قبل و بعد الحدث؟ </label>
+                                    <textarea name="interview" placeholder="هل تسمح بعمل مقابلات معك قبل وبعد الحدث؟"
+                                                       class="f1-about-yourself form-control" id="id_interview" required ></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_take_pic">هل تقبل بالتصوير أثناء الحدث؟</label>
+                                    <textarea name="take_pic" placeholder="هل تقبل بالتصوير أثناء الحدث؟"
+                                                       class="f1-about-yourself form-control" id="id_take_pic" required ></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="id_your_interest">اختر أحد الاهتمامات التالية التي تناسب ميولك :</label>
+                                    <textarea name="your_interest" placeholder="اختر أحد الاهتمامات التالية التي تناسب ميولك :"
+                                                       class="f1-about-yourself form-control" id="id_your_interest" required ></textarea>
+                                </div>
+
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="submit" class="btn btn-submit">Submit</button>
+                                </div>
+                            </fieldset>
+
+                    	</form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.backstretch.min.js' %}"></script>
+        <script src="{% static 'js/retina-1.1.0.min.js' %}"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="{% static 'js/placeholder.js' %}></script>
+
+    </body>
+
+</html>

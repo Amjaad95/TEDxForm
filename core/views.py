@@ -6,7 +6,7 @@ def handl_regesteration(request):
     if request.method == 'POST':
         form = RegestirationForm(request.POST)
         if form.is_valid():
-            regesteration = form.save()
+            new_regesteration = form.save()
             return HttpResponseRedirect(reverse('core:'))
     else:
         form = RegestirationForm()

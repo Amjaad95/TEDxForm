@@ -30,6 +30,19 @@
 
     </head>
 
+    <style>
+      @font-face {
+    font-family: 'GE Dinar One';
+    font-weight: normal;
+    src: url("{% static 'fonts/ge-dinar-one-light.woff' %}");
+}
+
+      body {
+  font-family: 'GE Dinar One', serif;
+}
+
+    </style>
+    
     <body>
 
 		<!-- Top menu -->
@@ -115,39 +128,45 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_gender">الجندر</label>
-                                    <input type="text" name="gender" placeholder="الجندر..." class="f1-last-name form-control" id="id_gender" required>
+                                        <select {% if form.gender.value and not form.gender.errors %}value="{{ form.gender.value }}" {% endif %}class="form-control" id="id_gender" name="gender"  title="{{ form.gender.label }}" required>
+                                                <option value="">{{ form.gender.label }}</option>
+                                                {% for value, label in form.fields.gender.widget.choices %}
+                                                <option {% if form.gender.value == value %}selected="selected" {% endif %}value="{{ value }}">{{ label }}</option>{% endfor %}
+					</select>	 
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_age">العمر</label>
-                                    <input type="text" name="age" placeholder="العمر..." class="f1-last-name form-control" id="id_age" required>
+                                    <input type="text" name="age" placeholder="العمر" class="f1-last-name form-control" id="id_age" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_mobile">رقم الجوال</label>
-                                    <input type="text" name="mobile" placeholder="رقم الجوال.." class="f1-last-name form-control" id="id_mobile" required>
+                                    <input type="text" name="mobile" placeholder="رقم الجوال" class="f1-last-name form-control" id="id_mobile" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_email">البريد الإلكتروني</label>
-                                    <input type="text" name="email" placeholder="البريد الإلكتروني.." class="f1-last-name form-control" id="id_email" required>
+                                    <input type="text" name="email" placeholder="البريد الإلكتروني" class="f1-last-name form-control" id="id_email" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_city">المدينة</label>
-                                    <input type="text" name="city" placeholder="المدينة.." class="f1-last-name form-control" id="id_city" required>
+                                    <input type="text" name="city" placeholder="المدينة" class="f1-last-name form-control" id="id_city" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_fromNGH">من منسوبي الحرس الوطني؟</label>
-                                    <input type="text" name="fromNGH" placeholder="البريد الإلكتروني.." class="f1-last-name form-control" id="id_fromNGH" required>
+                                     <h3> من منسوبي الحرس الوطني؟</h3>
+				     <input type="radio" name="take_pic" value="Yes"> لا<br>
+				     <input type="radio" name="take_pic" value="No"> نعم
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="id_job_title">المسمى الوظيفي</label>
-                                    <input type="text" name="job_title" placeholder="البريد الإلكتروني.." class="f1-last-name form-control" id="id_job_title" required>
+                                    <label class="sr-only" for="id_job_title"></label>
+                                    <input type="text" name="job_title" placeholder="المسمى الوظيفي" class="f1-last-name form-control" id="id_job_title" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_yourself">تحدث عن نفسك</label>
-                                    <textarea name="yourself" placeholder="تحدث عن نفسك..."
+                                    <textarea name="yourself" placeholder="تحدث عن نفسك"
                                     	                 class="f1-about-yourself form-control" id="id_yourself" required></textarea>
                                 </div>
                                 <div class="f1-buttons">
-                                    <button type="button" class="btn btn-next">Next</button>
+                                    <button type="button" class="btn btn-next">التالي</button>
                                 </div>
                             </fieldset>
 
@@ -181,8 +200,8 @@
                                 </div>
 
                                 <div class="f1-buttons">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" class="btn btn-next">Next</button>
+                                    <button type="button" class="btn btn-previous">عودة</button>
+                                    <button type="button" class="btn btn-next">التالي</button>
                                 </div>
                             </fieldset>
 
@@ -196,24 +215,29 @@
 
                                 <div class="form-group">
                                     <label class="sr-only" for="id_interview">هل تسمح بعمل مقابلات معك قبل و بعد الحدث؟ </label>
-                                    <textarea name="interview" placeholder="هل تسمح بعمل مقابلات معك قبل وبعد الحدث؟"
-                                                       class="f1-about-yourself form-control" id="id_interview" required ></textarea>
-                                </div>
+				    <h3> هل تسمح بعمل مقابلة معك قبل وبعد الحدث؟ </h3>
+				     <input type="radio" name="interview" value="Yes"> لا<br>
+				     <input type="radio" name="interview" value="No"> نعم
+				</div>
 
                                 <div class="form-group">
-                                    <label class="sr-only" for="id_take_pic">هل تقبل بالتصوير أثناء الحدث؟</label>
-                                    <textarea name="take_pic" placeholder="هل تقبل بالتصوير أثناء الحدث؟"
-                                                       class="f1-about-yourself form-control" id="id_take_pic" required ></textarea>
-                                </div>
+                                  <label class="sr-only" for="id_take_pic">هل تقبل بالتصوير أثناء الحدث؟</label>
+				  <h3> هل تقبل بالتصوير أثناء الحدث؟ </h3>
+				     <input type="radio" name="take_pic" value="Yes"> لا<br>
+				     <input type="radio" name="take_pic" value="No"> نعم
+				</div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_your_interest">اختر أحد الاهتمامات التالية التي تناسب ميولك :</label>
-                                    <textarea name="your_interest" placeholder="اختر أحد الاهتمامات التالية التي تناسب ميولك :"
-                                                       class="f1-about-yourself form-control" id="id_your_interest" required ></textarea>
+                                     <select {% if form.your_interest.value and not form.your_interst.errors %}value="{{ form.your_interest.value }}" {% endif %}class="form-control" id="id_your_interest" name="your_interest"  title="{{ form.your_interest.label }}" required>
+                                                <option value="">{{ form.your_interest.label }}</option>
+                                                {% for value, label in form.fields.your_interest.widget.choices %}
+                                                <option {% if form.your_interest.value == value %}selected="selected" {% endif %}value="{{ value }}">{{ label }}</option>{% endfor %}
+					 </select>
                                 </div>
 
                                 <div class="f1-buttons">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn btn-submit">Submit</button>
+                                    <button type="button" class="btn btn-previous">عودة</button>
+                                    <button type="submit" class="btn btn-submit">سجلني</button>
                                 </div>
                             </fieldset>
 

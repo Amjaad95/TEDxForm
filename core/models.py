@@ -15,7 +15,7 @@ class Regestiration(models.Model):
     age = models.IntegerField(default=0)
     mobile = models.CharField(max_length=20)
     emial = models.EmailField(max_length=100)
-    city = models.CharField(max_length=1,
+    city = models.CharField(max_length=10,
                             verbose_name=u"المدينة", default=u"الرياض")
     fromNGH = models.BooleanField(default= True)
     job_title = models.CharField(max_length=100)

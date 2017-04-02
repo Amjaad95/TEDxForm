@@ -9,8 +9,8 @@ def handl_regesteration(request):
     if request.method == 'POST':
         form = RegestirationForm(request.POST)
         if form.is_valid():
-            new_regesteration = form.save()
-            return HttpResponseRedirect(reverse('/thanks/'))
+            form.save()
+            return HttpResponseRedirect(reverse('thanks'))
     else:
         form = RegestirationForm()
     context = {'form': form}

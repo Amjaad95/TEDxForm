@@ -1,6 +1,6 @@
-{% load static %}
+{% load static %}{% load bootstrap3 %}
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl" >
 
     <head>
 
@@ -11,18 +11,22 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme-rtl.min.css' %}">
         <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
 		    <link rel="stylesheet" href="{% static 'css/form-elements.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="{% static 'ico/favicon.png' %}">
+        <link rel="shortcut icon" href="{% static 'img/logo.png' %}">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'ico/apple-touch-icon-144-precomposed.png' %}">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'ico/apple-touch-icon-114-precomposed.png' %}">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'ico/apple-touch-icon-72-precomposed.png' %}">
@@ -42,7 +46,7 @@
 }
 
     </style>
-    
+  {% bootstrap_form_errors form %}  
     <body>
 
 		<!-- Top menu -->
@@ -55,7 +59,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">BootZard - Bootstrap Wizard Template</a>
+					<a class="navbar-brand" href="index.html">TEDxKSAUHS</a>
 				</div>
 				<!-- Collect the navstatic filesstatic files links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -88,8 +92,8 @@
                     <div class="col-sm-8 col-sm-offset-2 text">
                         <h1>تسجيل حضور<br>  <span style="color: #ff2b06;">TED<sup>x</sup></span></b> KSAUHS.</h1>
                         <div class="description">
-                       	    <p>
-			      "ينظّم نادي الطلاب في جامعة الملك سعود بن عبد العزيز للعلوم الصحية تدكس "لو أن" <a href="http://azmind.com"><strong>تدكس "لو أن"</strong></a> في يوم السبت 15 أبريل في مركز المؤتمرات في جامعةالملك سعود بن عبدالعزيز للعلوم الصحية!
+                       	  <p>
+			 "ينظّم نادي الطلاب في جامعة الملك سعود بن عبد العزيز للعلوم الصحية" <a href="https://tedxksauhs.com/"><b><strong>تدكس "لو أن"</strong></b></a> في يوم السبت 15 أبريل في مركز المؤتمرات في جامعةالملك سعود بن عبدالعزيز للعلوم الصحية!
 
 			    </p>
                         </div>
@@ -121,10 +125,11 @@
                     		</div>
 
                     		<fieldset>
-                    		    <h4>أخبرنا عن نفسك:</h4>
+                    		    <h4 dir="rtl">أخبرنا عن نفسك:</h4>
                     			<div class="form-group">
                     			    <label class="sr-only" for="id_name">أسمك</label>
-                                    <input type="text" name="name" placeholder="أسمك" class="f1-first-name form-control" id="id_name" required>
+					   {% bootstrap_field form.name %}
+
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_gender">الجندر</label>
@@ -136,34 +141,41 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_age">العمر</label>
-                                    <input type="text" name="age" placeholder="العمر" class="f1-last-name form-control" id="id_age" required>
+			 {% bootstrap_field form.age %}
+
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_mobile">رقم الجوال</label>
-                                    <input type="text" name="mobile" placeholder="رقم الجوال" class="f1-last-name form-control" id="id_mobile" required>
+                                  
+				    {% bootstrap_field form.mobile %}
+
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_email">البريد الإلكتروني</label>
-                                    <input type="text" name="email" placeholder="البريد الإلكتروني" class="f1-last-name form-control" id="id_email" required>
+				     {% bootstrap_field form.emial %}
+
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_city">المدينة</label>
-                                    <input type="text" name="city" placeholder="المدينة" class="f1-last-name form-control" id="id_city" required>
+                                  {% bootstrap_field form.city %}
+
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_fromNGH">من منسوبي الحرس الوطني؟</label>
-                                     <h3> من منسوبي الحرس الوطني؟</h3>
+                                     <h4 dir="rlt" > من منسوبي الحرس الوطني؟</h4>
 				     <input type="radio" name="take_pic" value="Yes"> لا<br>
 				     <input type="radio" name="take_pic" value="No"> نعم
+				     
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_job_title"></label>
-                                    <input type="text" name="job_title" placeholder="المسمى الوظيفي" class="f1-last-name form-control" id="id_job_title" required>
+                                  {% bootstrap_field form.job_title %}
+
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="id_yourself">تحدث عن نفسك</label>
-                                    <textarea name="yourself" placeholder="تحدث عن نفسك"
-                                    	                 class="f1-about-yourself form-control" id="id_yourself" required></textarea>
+                                  <label class="sr-only" for="id_yourself">تحدث عن نفسك</label>
+				  {% bootstrap_field form.yourself %}
+
                                 </div>
                                 <div class="f1-buttons">
                                     <button type="button" class="btn btn-next">التالي</button>
@@ -174,29 +186,32 @@
                                 <h4>عن TEDx:</h4>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_about_tedx">تحدث عن TEDx</label>
-                                    <textarea name="about_tedx" placeholder="تحدث عن TEDx.."
-                                                       class="f1-about-yourself form-control" id="id_about_tedx" required></textarea>
+					    {% bootstrap_field form.about_tedx %}
+
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="sr-only" for="id_attend_tedx">هل حضرت لتدكس؟</label>
-                                    <input type="text" name="attend_tedx" placeholder="هل حضرت لتدكس..." class="f1-email form-control" id="id_attend_tedx" required>
+                                  <label class="sr-only" for="id_attend_tedx">هل حضرت لتدكس؟</label>
+				  <h4>هل سبق وحضرت لتدكس؟</h4>
+				   <input type="radio" name="take_pic" value="Yes"> لا<br>
+				     <input type="radio" name="take_pic" value="No"> نعم
                                 </div>
 
                                 <div class="form-group">
                                     <label class="sr-only" for="id_past_experience">تحدث عن تجربتك السابقة</label>
-                                    <textarea name="about_tedx" placeholder="تحدث عن تجربتك السابقة.."
-                                                       class="f1-about-yourself form-control" id="id_about_tedx" ></textarea>
+					    {% bootstrap_field form.past_experience %}
+
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="sr-only" for="id_referral">كيف سمعت  عن tedxksauhs ؟</label>
-                                    <input type="text" name="referral" placeholder="كيف سمعت  عن tedxksauhs ؟..." class="f1-email form-control" id="id_referral" required>
+                                    <label class="sr-only" for="id_referral">كيف سمعت  عن tedxksauhs?</label>
+					    {% bootstrap_field form.referral %}
                                 </div>
 
                                 <div class="form-group">
-                                      <label class="sr-only" for="id_expectations">ماذا تتوقع من tedxksauhs ؟</label>
-                                      <input type="text" name="expectations" placeholder="ماذا تتوقع من tedxksauhs ؟..." class="f1-email form-control" id="id_expectations" required>
+                                      <label class="sr-only" for="id_expectations">ماذا تتوقع من tedxksauhs?</label>
+					    {% bootstrap_field form.expectations %}
+
                                 </div>
 
                                 <div class="f1-buttons">
@@ -209,20 +224,20 @@
                                 <h4>عن الحدث:</h4>
                                 <div class="form-group">
                                     <label class="sr-only" for="id_meaning">ماذا تعني لك "لو أن"؟</label>
-                                    <textarea name="meaning" placeholder="ماذا تعني لك لو أن؟.."
-                                                       class="f1-about-yourself form-control" id="id_meaning" required ></textarea>
+					    {% bootstrap_field form.meaning %}
+
                                 </div>
 
                                 <div class="form-group">
                                     <label class="sr-only" for="id_interview">هل تسمح بعمل مقابلات معك قبل و بعد الحدث؟ </label>
-				    <h3> هل تسمح بعمل مقابلة معك قبل وبعد الحدث؟ </h3>
+				    <h4> هل تسمح بعمل مقابلة معك قبل وبعد الحدث؟ </h4>
 				     <input type="radio" name="interview" value="Yes"> لا<br>
 				     <input type="radio" name="interview" value="No"> نعم
 				</div>
 
                                 <div class="form-group">
                                   <label class="sr-only" for="id_take_pic">هل تقبل بالتصوير أثناء الحدث؟</label>
-				  <h3> هل تقبل بالتصوير أثناء الحدث؟ </h3>
+				  <h4> هل تقبل بالتصوير أثناء الحدث؟ </h4>
 				     <input type="radio" name="take_pic" value="Yes"> لا<br>
 				     <input type="radio" name="take_pic" value="No"> نعم
 				</div>
@@ -255,13 +270,13 @@
         <script src="{% static 'js/jquery.backstretch.min.js' %}"></script>
         <script src="{% static 'js/retina-1.1.0.min.js' %}"></script>
         <script src="{% static 'js/scripts.js' %}"></script>
-        <script src="{% static 'js/placeholder.js' %}"></script>
+ 
 <script>
     /*
         Fullscreen background
     */
 
-    $.backstretch("{% static 'img/backgrounds/1.jpg' %}");
+    $.backstretch("{% static 'img/backgrounds/tedx.jpg' %}");
 </script>
     </body>
 
